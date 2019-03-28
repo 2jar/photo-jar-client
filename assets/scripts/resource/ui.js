@@ -1,11 +1,11 @@
 //  on successes & failures
 'use strict'
 // const store = require('../store.js')
+const showAllImagesTemplate = require('../templates/all-images.handlebars')
 
-const uploadFileSuccess = (responseData) => {
-  $('#image-location').html(`
-        <img alt="user uploaded image" src="${responseData.upload.url}" />
-        `)
+const uploadFileSuccess = (data) => {
+  const showImagesHtml = showAllImagesTemplate({ images: data.images })
+  $('#content').html(showImagesHtml)
 }
 
 const failure = () => {
