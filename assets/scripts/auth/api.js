@@ -44,7 +44,7 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword,
-  store,
-  config
+  changePassword
+  // store
+  // config
 }
