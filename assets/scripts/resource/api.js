@@ -5,7 +5,7 @@ const config = require('../config.js')
 
 const uploadFile = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/uploads',
+    url: config.apiUrl + '/images',
     method: 'POST',
     contentType: false,
     processData: false,
