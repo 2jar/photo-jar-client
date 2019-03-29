@@ -7,16 +7,18 @@ const ui = require('./ui.js')
 
 const onUploadFile = (event) => {
   // $('form').on('submit', (event) => {
+  console.log('upload event', event)
   event.preventDefault()
   const formData = new FormData(event.target)
   api.uploadFile(formData)
     .then(ui.uploadFileSuccess)
-    .then(onGetFiles())
+    .then(onGetFiles)
     .catch(ui.failure)
 }
 
 const onGetFiles = (event) => {
-  event.preventDefault()
+  console.log('get files event', event)
+  // event.preventDefault()
   api.getFiles()
     .then(ui.getFilesSuccess)
     .catch(ui.failure)
@@ -26,7 +28,7 @@ const onUpdateFile = (event) => {
   event.preventDefault()
   api.updateFile()
     .then(ui.updateFileSuccess)
-    .then(onGetFiles())
+    .then(onGetFiles)
     .catch(ui.failure)
 }
 
@@ -34,13 +36,13 @@ const onDeleteFile = (event) => {
   event.preventDefault()
   api.deleteFile()
     .then(ui.deleteFileSuccess)
-    .then(onGetFiles())
+    .then(onGetFiles)
     .catch(ui.failure)
 }
 
 const addHandlers = () => {
-  $('form').on('submit', onUploadFile)
-  $('#get-files-button').on('click', onGetFiles)
+  $('#upload-form').on('submit', onUploadFile)
+  // $('#get-files-button').on('click', onGetFiles)
   $('#content').on('submit', '.update-image-form', onUpdateFile)
   $('#content').on('submit', '.delete-image-button', onDeleteFile)
 }
