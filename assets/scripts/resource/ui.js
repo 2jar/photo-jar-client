@@ -3,8 +3,9 @@
 // const store = require('../store.js')
 
 const uploadFileSuccess = (responseData) => {
+  console.log(responseData)
   $('#image-location').html(`
-        <img alt="user uploaded image" src="${responseData.upload.url}" />
+        <img alt="user uploaded image" src="${responseData.image.url}" />
         `)
 }
 

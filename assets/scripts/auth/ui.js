@@ -33,11 +33,6 @@ const signInSuccess = (responseData) => {
   $('.signed-out-view').addClass('d-none')
   // this should make the sign in view display on succesful sign-in
   $('.signed-in-view').removeClass('d-none')
-  // const revealBoard = () => {
-  //   $('.game-board').removeClass('d-none')
-  //   $('.userMessages').html('x starts the game!')
-  // }
-
   // save the token
   store.user = responseData.user
 }

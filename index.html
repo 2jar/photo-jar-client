@@ -179,11 +179,12 @@
     <section class="hello"></section>
     <section class="user-messages"></section>
 <!-- Upload file form -->
-    <form action="">
+    <form id="upload-form" enctype="multipart/form-data">
         <label for="upload-file">PHOTO TIME</label>
         <br>
-        <input type="file" id="upload-file" name="image" accept="image/png, image/jpeg, image/gif">
-        <input type="submit" />
+        <input type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif">
+        <input type="text" name="name" required>
+        <input type="submit" id="upload-button"/>
       </form>
       <section id="image-location"></section>
 
