@@ -1,5 +1,7 @@
 'use strict'
 const store = require('../store.js')
+const resourceUi = require('../resource/ui')
+const resourceApi = require('../resource/api')
 
 const signUpSuccess = () => {
   $('.register-msg').text('Successfully registered!')
@@ -35,6 +37,10 @@ const signInSuccess = (responseData) => {
   $('.signed-in-view').removeClass('d-none')
   // save the token
   store.user = responseData.user
+  // get and display all images
+  resourceApi.getFiles()
+    .then(resourceUi.getFilesSuccess)
+    .catch(resourceUi.failure)
 }
 
 const signInFailure = () => {

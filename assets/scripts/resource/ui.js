@@ -1,13 +1,13 @@
 //  on successes & failures
 'use strict'
 // const store = require('../store.js')
-// const showAllImagesTemplate = require('../templates/all-images.handlebars')
+const showAllImagesTemplate = require('../templates/all-images.handlebars')
 // const showUserImagesTemplate = require('../templates/user-images.handlebars')
 
 const uploadFileSuccess = (responseData) => {
-  console.log('response data', responseData)
+  console.log('inside uploadFileSuccess: ', responseData)
   $('#image-location').html(`
-      <img alt="user uploaded image" src="${responseData.image.url}" />
+      <img alt="user uploaded image" src="${responseData.image.url}" width="100%" />
       `)
   $('form').trigger('reset')
   $('.user-messages').text('Uploaded Successfully!')
@@ -16,15 +16,9 @@ const uploadFileSuccess = (responseData) => {
   }, 2000)
 }
 
-// const getFilesSuccess = (data) => {
-// const showImagesHtml = showAllImagesTemplate({ images: data.images })
-// $('#content').html(showImagesHtml)
-
-const getFileSuccess = (responseData) => {
-  console.log('response data', responseData)
-  $('#image-location').html(`
-      <img alt="user uploaded image" src="${responseData.image.url}" />
-      `)
+const getFilesSuccess = (responseData) => {
+  const showAllImagesHtml = showAllImagesTemplate({ images: responseData.images })
+  $('#content').append(showAllImagesHtml)
 }
 
 const updateFileSuccess = () => {
@@ -58,7 +52,7 @@ const failure = () => {
 
 module.exports = {
   uploadFileSuccess,
-  getFileSuccess,
+  getFilesSuccess,
   updateFileSuccess,
   deleteFileSuccess,
   failure

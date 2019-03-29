@@ -1,24 +1,17 @@
 {{#each images as |image|}}
 <!-- unsure of image properties -->
-  <section class="image-jar signed-out-view" data-id="{{image.id}}">
-    <h4>
-      {{image.name}}
-    </h4>
-    <p>
-      <small>User:</small> {{image.owner.ref}}
-    </p>
-      <section>
-        <img alt="user uploaded image" src="{{image.url}}" />
-      </section>
+  <section class="image-jar signed-out-view" data-id="{{image._id}}">
+    <h4>{{image.title}}</h4><br>
+    <img alt="user uploaded image" src="{{image.url}}" width="100%"/>
     <p>
       <small>Tag:</small> {{image.tag}}
     </p>
-    <p>
-      <small>Date Created:</small> {{image.date_uploaded}}
-    </p>
-    <p>
-      <small>Date Updated:</small> {{image.date_modified}}
-    </p>
+    <hr>
+    {{#if image.editable}}
+      <p>✅ You own this image</p>
+    {{else}}
+      <p>❌ You do not own this image</p>
+    {{/if}}
   </section>
 
 {{/each}}

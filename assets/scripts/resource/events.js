@@ -6,8 +6,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onUploadFile = (event) => {
-  // $('form').on('submit', (event) => {
-  console.log('upload event', event)
   event.preventDefault()
   const formData = new FormData(event.target)
   api.uploadFile(formData)
@@ -17,8 +15,6 @@ const onUploadFile = (event) => {
 }
 
 const onGetFiles = (event) => {
-  console.log('get files event', event)
-  // event.preventDefault()
   api.getFiles()
     .then(ui.getFilesSuccess)
     .catch(ui.failure)
