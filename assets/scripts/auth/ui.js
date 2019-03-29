@@ -3,12 +3,26 @@ const store = require('../store.js')
 const resourceUi = require('../resource/ui')
 const resourceApi = require('../resource/api')
 
+const fadeOutSignIn = function () {
+  $('.sign-in-div').fadeOut(300)
+}
+const fadeInSignIn = function () {
+  $('.sign-in-div').fadeIn(300)
+}
+const fadeOutAuth = function () {
+  $('.initial-auth-form').fadeOut(300)
+}
+const fadeInAuth = function () {
+  $('.initial-auth-form').fadeIn(300)
+}
+
 const signUpSuccess = () => {
   $('.register-msg').text('Successfully registered!')
   $('form').trigger('reset')
   setTimeout(() => {
     $('.register-msg').text('')
   }, 2000)
+  fadeInSignIn()
 }
 
 const signUpFailure = () => {
@@ -35,6 +49,7 @@ const signInSuccess = (responseData) => {
   $('.signed-out-view').addClass('d-none')
   // this should make the sign in view display on succesful sign-in
   $('.signed-in-view').removeClass('d-none')
+  fadeOutAuth()
   // save the token
   store.user = responseData.user
   // get and display all images
@@ -82,6 +97,7 @@ const signOutSuccess = () => {
 
   // clear the "hello, user" message
   $('.hello').text('')
+  fadeInAuth()
 
   store.user = null
   setTimeout(() => {
@@ -104,5 +120,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  fadeOutSignIn,
+  fadeInSignIn
 }

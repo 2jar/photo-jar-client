@@ -4,6 +4,16 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
+const onRegisterReveal = function (event) {
+  event.preventDefault()
+  ui.fadeOutSignIn()
+}
+
+const onSignInReveal = function (event) {
+  event.preventDefault()
+  ui.fadeInSignIn()
+}
+
 const onSignUp = (event) => {
   event.preventDefault()
   const form = event.target
@@ -52,6 +62,8 @@ const addHandlers = () => {
   $('#change-pw-form').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
   $('.clear-on-close').on('click', formReset)
+  $('#register-reveal').on('click', onRegisterReveal)
+  $('#sign-in-reveal').on('click', onSignInReveal)
 }
 
 module.exports = {
