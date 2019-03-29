@@ -2,7 +2,7 @@
 'use strict'
 // const store = require('../store.js')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
-const showUserImagesTemplate = require('../templates/user-images.handlebars')
+// const showUserImagesTemplate = require('../templates/user-images.handlebars')
 
 const uploadFileSuccess = (responseData) => {
   $('form').trigger('reset')
@@ -13,8 +13,8 @@ const uploadFileSuccess = (responseData) => {
 }
 
 const getFilesSuccess = (data) => {
-  // const showImagesHtml = showAllImagesTemplate({ images: data.images })
-  //   $('#content').html(showImagesHtml)
+  const showImagesHtml = showAllImagesTemplate({ images: data.images })
+  $('#content').html(showImagesHtml)
 }
 
 const updateFileSuccess = () => {
