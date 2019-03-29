@@ -1,0 +1,24 @@
+{{#each images as |image|}}
+<!-- unsure of image properties -->
+  <section class="image-jar signed-out-view" data-id="{{image.id}}">
+    <h4>
+      {{image.name}}
+    </h4>
+    <p>
+      <small>User:</small> {{image.owner.ref}}
+    </p>
+      <section>
+        <img alt="user uploaded image" src="{{image.url}}" />
+      </section>
+    <p>
+      <small>Tag:</small> {{image.tag}}
+    </p>
+    <p>
+      <small>Date Created:</small> {{image.date_uploaded}}
+    </p>
+    <p>
+      <small>Date Updated:</small> {{image.date_modified}}
+    </p>
+  </section>
+
+{{/each}}

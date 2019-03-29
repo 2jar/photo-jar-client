@@ -1,12 +1,17 @@
 //  on successes & failures
 'use strict'
 // const store = require('../store.js')
+const showAllImagesTemplate = require('../templates/all-images.handlebars')
+const showUserImagesTemplate = require('../templates/user-images.handlebars')
 
-const uploadFileSuccess = (responseData) => {
-  console.log(responseData)
-  $('#image-location').html(`
-        <img alt="user uploaded image" src="${responseData.image.url}" />
-        `)
+const uploadFileSuccess = (data) => {
+  const showImagesHtml = showAllImagesTemplate({ images: data.images })
+  $('#content').html(showImagesHtml)
+}
+
+const viewUserFileSuccess = (data) => {
+  const showUserImagesHtml = showUserImagesTemplate({ images: data.images })
+  $('#content').html(showUserImagesHtml)
 }
 
 const failure = () => {
@@ -18,5 +23,6 @@ const failure = () => {
 
 module.exports = {
   uploadFileSuccess,
+  viewUserFileSuccess,
   failure
 }
