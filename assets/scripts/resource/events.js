@@ -15,7 +15,7 @@ const onUploadFile = (event) => {
 }
 
 const addHandlers = () => {
-  $('form').on('submit', onUploadFile)
+  $('#upload-form').on('submit', onUploadFile)
 }
 
 module.exports = {
