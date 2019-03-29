@@ -16,6 +16,34 @@ const uploadFile = (formData) => {
   })
 }
 
+const getFiles = () => {
+  return $.ajax({
+    url: config.apiUrl + '/images',
+    method: 'GET',
+    headers: { Authorization: 'Token token=' + store.user.token }
+  })
+}
+
+const updateFile = (data, id) => {
+  return $.ajax({
+    url: config.apiUrl + '/images' + id,
+    method: 'PATCH',
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data
+  })
+}
+
+const deleteFile = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/images' + id,
+    method: 'DELETE',
+    headers: { Authorization: 'Token token=' + store.user.token }
+  })
+}
+
 module.exports = {
-  uploadFile
+  uploadFile,
+  getFiles,
+  updateFile,
+  deleteFile
 }

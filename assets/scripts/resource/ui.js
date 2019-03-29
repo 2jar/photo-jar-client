@@ -4,25 +4,52 @@
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
 const showUserImagesTemplate = require('../templates/user-images.handlebars')
 
-const uploadFileSuccess = (data) => {
-  const showImagesHtml = showAllImagesTemplate({ images: data.images })
-  $('#content').html(showImagesHtml)
-}
-
-const viewUserFileSuccess = (data) => {
-  const showUserImagesHtml = showUserImagesTemplate({ images: data.images })
-  $('#content').html(showUserImagesHtml)
-}
-
-const failure = () => {
-  $('.user-messages').text('Something went wrong when uploading image file.')
+const uploadFileSuccess = (responseData) => {
+  $('form').trigger('reset')
+  $('.user-messages').text('Uploaded Successfully!')
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
 }
 
+const getFilesSuccess = (data) => {
+  // const showImagesHtml = showAllImagesTemplate({ images: data.images })
+  //   $('#content').html(showImagesHtml)
+}
+
+const updateFileSuccess = () => {
+  $('form').trigger('reset')
+  $('.user-messages').text('Successfully updated!')
+  setTimeout(() => {
+    $('.user-messages').text('')
+  }, 2000)
+  $('.modal-backdrop').hide()
+  $('body').removeClass('modal-open')
+}
+
+const deleteFileSuccess = (id) => {
+  $('.user-messages').text('File Deleted!')
+  setTimeout(() => {
+    $('.user-messages').text('')
+  }, 2000)
+  $('.modal-backdrop').hide()
+  $('body').removeClass('modal-open')
+}
+
+const failure = () => {
+  $('form').trigger('reset')
+  $('.user-messages').text('Something went wrong.')
+  setTimeout(() => {
+    $('.user-messages').text('')
+  }, 2000)
+  $('.modal-backdrop').hide()
+  $('body').removeClass('modal-open')
+}
+
 module.exports = {
   uploadFileSuccess,
-  viewUserFileSuccess,
+  getFilesSuccess,
+  updateFileSuccess,
+  deleteFileSuccess,
   failure
 }
