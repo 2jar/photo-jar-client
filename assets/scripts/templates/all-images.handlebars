@@ -1,17 +1,32 @@
 {{#each images as |image|}}
 <!-- unsure of image properties -->
-  <section id="{{image._id}} class="image-jar signed-out-view" data-id="{{image._id}}">
-    <h4>{{image.title}}</h4><br>
+  <section id="{{image._id}}" class="image-jar" data-id="{{image._id}}">
+    <!-- <h4>{{image.title}}</h4><br> -->
     <img alt="user uploaded image" src="{{image.url}}" width="100%"/>
-    <p>
+    <!-- <p>
       <small>Tag:</small> {{image.tag}}
-    </p>
+    </p> -->
     <hr>
     {{#if image.editable}}
+    <section class="is-editable" data-overlay>
       <p>✅ You own this image</p>
+      <h6>{{image.title}}</h6>
+      <h6>{{image.tag}}</h6>
+      <div>
+      <button >Delete</button>
+      <button>Edit</button>
+      <button>Close</button>
+      <div>
+    </section>
     {{else}}
+    <section class="not-editable" data-overlay>
       <p>❌ You do not own this image</p>
+      <h6>{{image.title}}</h6>
+      <h6>{{image.tag}}</h6>
+
+    </section>
     {{/if}}
+  </section>
   </section>
 
 {{/each}}
