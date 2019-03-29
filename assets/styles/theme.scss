@@ -1,3 +1,9 @@
+$auth-form-background-color: $white;
+
+nav {
+  z-index: 100;
+}
+
 .dropdown {
   position: relative;
 }
@@ -41,5 +47,71 @@ main {
 
   .content {
     @include make-row;
+  }
+}
+
+.initial-auth-form {
+  align-items: center;
+  background-color: $auth-form-background-color;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 40;
+
+  > .sign-in-div {
+    align-items: center;
+    background-color: $auth-form-background-color;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+
+    > form {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+
+      > label {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  > .sign-up-div {
+    align-items: center;
+    background-color: $auth-form-background-color;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 45;
+
+    > form {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+
+      > label {
+        align-self: flex-start;
+      }
+
+      > select {
+        align-self: flex-start;
+        width: 100%;
+      }
+    }
   }
 }
