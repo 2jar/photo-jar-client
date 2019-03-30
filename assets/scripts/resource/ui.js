@@ -25,13 +25,17 @@ const getFilesSuccess = (responseData) => {
   $('#content').append(showAllImagesHtml)
 }
 
-const updateFileSuccess = () => {
+const updateFileSuccess = (responseData) => {
   $('form').trigger('reset')
   $('.user-messages').text('Successfully updated!')
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
   $('.modal-backdrop').hide()
+  $('.modal').modal('hide')
+  $('#title-' + responseData.image._id).text('Title: ' + responseData.image.title)
+  $('#tag-' + responseData.image._id).text('Tag: ' + responseData.image.tag)
+  $('#modified-' + responseData.image._id).text('Modified: ' + responseData.image.updatedAt)
   $('body').removeClass('modal-open')
 }
 
