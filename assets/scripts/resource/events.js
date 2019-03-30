@@ -11,7 +11,6 @@ const onUploadFile = (event) => {
   const formData = new FormData(event.target)
   api.uploadFile(formData)
     .then(ui.uploadFileSuccess)
-    .then(onGetFiles)
     .catch(ui.failure)
 }
 
