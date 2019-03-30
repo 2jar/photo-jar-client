@@ -9,10 +9,20 @@
   {{#if image.editable}}
     <section class="is-editable" data-overlay>
       <!-- <p>✅ You own this image</p> -->
-      <h6>{{image.title}}</h6>
-      <h6>{{image.tag}}</h6>
+      <h6 id="title-{{image._id}}">Title: {{image.title}}</h6>
+      <h6 id="tag-{{image._id}}">Tag: {{image.tag}}</h6>
+      <h6 id="created-{{image._id}}">Created: {{image.createdAt}}</h6>
+      <h6 id="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
+      <h6 id="owner-{{image._id}}">Owner ID: {{image.owner}}</h6>
       <!-- button divs -->
       <div>
+        <!-- Download button -->
+        <a href="{{image.url}}" target="_blank">
+          <button type="button" class="btn btn-secondary" data-toggle="modal">
+            Download
+          </button>
+        </a>
+
         <!-- Update Photo Jar Button trigger modal -->
         <button type="button" class="btn update-btn btn submit btn-primary" data-toggle="modal" data-target="#updateModal-{{image._id}}">
           Update
@@ -30,8 +40,18 @@
   {{else}}
     <section class="not-editable" data-overlay>
       <!-- <p>❌ You do not own this image</p> -->
-      <h6>{{image.title}}</h6>
-      <h6>{{image.tag}}</h6>
+      <h6 id="title-{{image._id}}">Title: {{image.title}}</h6>
+      <h6 id="tag-{{image._id}}">Tag: {{image.tag}}</h6>
+      <h6 id="created-{{image._id}}">Created: {{image.createdAt}}</h6>
+      <h6 id="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
+      <h6 id="owner-{{image._id}}">Owner ID: {{image.owner}}</h6>
+
+      <!-- Download button -->
+      <a href="{{image.url}}" target="_blank">
+        <button type="button" class="btn btn-secondary" data-toggle="modal">
+          Download
+        </button>
+      </a>
 
     </section>
   {{/if}}
@@ -92,4 +112,5 @@
       </div>
     </div>
   </div>
+
 </section>
