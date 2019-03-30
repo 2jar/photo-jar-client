@@ -4,6 +4,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store')
 
 const onUploadFile = (event) => {
   event.preventDefault()
@@ -32,6 +33,7 @@ const onUpdateFile = (event) => {
 const onDeleteFile = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
+  store.imageId = formData.image.id
   api.deleteFile(formData)
     .then(ui.deleteFileSuccess)
     .then(onGetFiles)

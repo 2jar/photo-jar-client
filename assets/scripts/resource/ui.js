@@ -1,5 +1,6 @@
 //  on successes & failures
 'use strict'
+const store = require('../store')
 // const store = require('../store.js')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
 // const showUserImagesTemplate = require('../templates/user-images.handlebars')
@@ -30,13 +31,16 @@ const updateFileSuccess = () => {
   $('body').removeClass('modal-open')
 }
 
-const deleteFileSuccess = (id) => {
+const deleteFileSuccess = () => {
   $('.user-messages').text('File Deleted!')
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
   $('.deleteModal').modal('hide')
-  $('body').removeClass('modal-open')
+  setTimeout(() => {
+    $('#' + store.imageId).remove()
+  }, 400)
+  console.log('this is store image id', store.imageId)
 }
 
 const failure = () => {
@@ -46,6 +50,7 @@ const failure = () => {
     $('.user-messages').text('')
   }, 2000)
   $('.modal-backdrop').hide()
+  $('.deleteModal').modal('hide')
   $('body').removeClass('modal-open')
 }
 
