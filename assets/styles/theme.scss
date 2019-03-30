@@ -62,8 +62,13 @@ main {
   content: '' attr(data-overlay);
 }
 
+.not-editable {
+display: none;
+}
+
 .image-jar:hover > .not-editable {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
