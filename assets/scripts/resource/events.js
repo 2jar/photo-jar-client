@@ -1,7 +1,7 @@
 //  onUploadFile, onCRUD & event handlers
 'use strict'
 
-// const getFormFields = require('../../../lib/get-form-fields.js')
+const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -22,7 +22,10 @@ const onGetFiles = (event) => {
 
 const onUpdateFile = (event) => {
   event.preventDefault()
-  api.updateFile()
+  const formData = getFormFields(event.target)
+  console.log('word up i am updatefile formdata', formData)
+  console.log('event target is', event.target)
+  api.updateFile(formData)
     .then(ui.updateFileSuccess)
     .then(onGetFiles)
     .catch(ui.failure)
@@ -30,7 +33,10 @@ const onUpdateFile = (event) => {
 
 const onDeleteFile = (event) => {
   event.preventDefault()
-  api.deleteFile()
+  console.log(event)
+  const formData = $(event.target).data('_id')
+  console.log(formData)
+  api.deleteFile(formData)
     .then(ui.deleteFileSuccess)
     .then(onGetFiles)
     .catch(ui.failure)

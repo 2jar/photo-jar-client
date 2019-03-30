@@ -52,6 +52,7 @@
         <div class="modal-body">
           <form class="update-image-form" data-id={{image._id}}>
             <div class="form-group">
+              <input type="hidden" name="image[id]" value="{{image._id}}">
               <label for="InputImageName">Photo Title:</label>
               <input required type="text" name="image[title]" class="form-control" placeholder="Photo Title" value="{{image.title}}">
             </div>
@@ -81,6 +82,7 @@
             </button>
           </div>
           <div class="modal-body">
+            <input type="hidden" name="image[id]" value="{{image._id}}">
             <p> Are you sure you want to delete your Photo Jar FOREVER? </p>
           </div>
           <div class="modal-footer">
