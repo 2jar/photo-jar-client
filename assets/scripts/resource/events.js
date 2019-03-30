@@ -23,8 +23,6 @@ const onGetFiles = (event) => {
 const onUpdateFile = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log('word up i am updatefile formdata', formData)
-  console.log('event target is', event.target)
   api.updateFile(formData)
     .then(ui.updateFileSuccess)
     .then(onGetFiles)
@@ -33,10 +31,7 @@ const onUpdateFile = (event) => {
 
 const onDeleteFile = (event) => {
   event.preventDefault()
-  console.log(event)
   const formData = getFormFields(event.target)
-  console.log('this is the Delete event.target', event.target)
-  console.log(formData)
   api.deleteFile(formData)
     .then(ui.deleteFileSuccess)
     .then(onGetFiles)

@@ -24,7 +24,6 @@ const getFiles = () => {
 }
 
 const updateFile = (formData) => {
-  console.log('salutations from updatefile api.js', formData)
   return $.ajax({
     url: config.apiUrl + '/images/' + formData.image.id,
     method: 'PATCH',
@@ -33,18 +32,7 @@ const updateFile = (formData) => {
   })
 }
 
-// const updateFile = (data, id) => {
-//   return $.ajax({
-//     url: config.apiUrl + '/images' + id,
-//     method: 'PATCH',
-//     headers: { Authorization: 'Token token=' + store.user.token },
-//     data
-//   })
-// }
-
 const deleteFile = (formData) => {
-  console.log('this is the deleteFile api function', formData)
-  console.log('this is the delete formData image info', formData.image)
   return $.ajax({
     url: config.apiUrl + '/images/' + formData.image.id,
     method: 'DELETE',
