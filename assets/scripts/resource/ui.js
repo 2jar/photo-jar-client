@@ -36,7 +36,7 @@ const deleteFileSuccess = (id) => {
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
-  $('.modal-backdrop').hide()
+  $('.deleteModal').modal('hide')
   $('body').removeClass('modal-open')
 }
 

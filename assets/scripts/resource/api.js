@@ -43,9 +43,10 @@ const updateFile = (formData) => {
 // }
 
 const deleteFile = (formData) => {
-  console.log(formData)
+  console.log('this is the deleteFile api function', formData)
+  console.log('this is the delete formData image info', formData.image)
   return $.ajax({
-    url: config.apiUrl + '/images/' + formData,
+    url: config.apiUrl + '/images/' + formData.image.id,
     method: 'DELETE',
     headers: { Authorization: 'Token token=' + store.user.token }
   })

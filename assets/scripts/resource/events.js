@@ -34,7 +34,8 @@ const onUpdateFile = (event) => {
 const onDeleteFile = (event) => {
   event.preventDefault()
   console.log(event)
-  const formData = $(event.target).data('_id')
+  const formData = getFormFields(event.target)
+  console.log('this is the Delete event.target', event.target)
   console.log(formData)
   api.deleteFile(formData)
     .then(ui.deleteFileSuccess)
@@ -46,7 +47,7 @@ const addHandlers = () => {
   $('#upload-form').on('submit', onUploadFile)
   // $('#get-files-button').on('click', onGetFiles)
   $('#content').on('submit', '.update-image-form', onUpdateFile)
-  $('#content').on('submit', '.delete-image-button', onDeleteFile)
+  $('body').on('submit', '.delete-image-form', onDeleteFile)
 }
 
 module.exports = {
