@@ -9,6 +9,9 @@ nav {
 }
 .navbar {
   background-color: $burgundy;
+  > .navbar-brand {
+      color: $white;
+  }
 }
 
 .dropdown {
@@ -30,7 +33,7 @@ main {
     }
     background: white;
     border: 1px solid;
-    margin: -1px;
+    margin: 10px;
     // border-right: 1px solid;
     cursor: pointer;
     outline: none;
