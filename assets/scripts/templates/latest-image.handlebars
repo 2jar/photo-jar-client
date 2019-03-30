@@ -1,13 +1,12 @@
-{{#each images as |image|}}
 <!-- unsure of image properties -->
-  <section id="{{image._id}}" class="image-jar" data-id="{{image._id}}">
-    <!-- <h4>{{image.title}}</h4><br> -->
-    <img id="image-{{image._id}}" alt="user uploaded image" src="{{image.url}}" width="100%"/>
-    <!-- <p>
+<section id="{{image._id}}" class="image-jar" data-id="{{image._id}}">
+  <!-- <h4>{{image.title}}</h4><br> -->
+  <img id="image-{{image._id}}" alt="user uploaded image" src="{{image.url}}" width="100%" />
+  <!-- <p>
       <small>Tag:</small> {{image.tag}}
     </p> -->
-    <hr>
-    {{#if image.editable}}
+  <hr>
+  {{#if image.editable}}
     <section class="is-editable" data-overlay>
       <!-- <p>✅ You own this image</p> -->
       <h6>{{image.title}}</h6>
@@ -24,18 +23,18 @@
           Delete
         </button>
 
-      <div>
-        <!-- Update Photo Jar Button modal form-->
+        <div>
+          <!-- Update Photo Jar Button modal form-->
 
     </section>
-    {{else}}
+  {{else}}
     <section class="not-editable" data-overlay>
       <!-- <p>❌ You do not own this image</p> -->
       <h6>{{image.title}}</h6>
       <h6>{{image.tag}}</h6>
 
     </section>
-    {{/if}}
+  {{/if}}
 
   <!-- modal for update-->
   <div class="modal fade" id="updateModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -69,30 +68,28 @@
     </div>
   </div>
 
-<!-- modal for deletion confirmation -->
-    <div class="modal fade deleteModal" id="deleteModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="delteModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title deleteModalLabel" id="deleteModalLabel-{{image._id}}">Delete Photo Jar</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p> Are you sure you want to delete your Photo Jar FOREVER? </p>
-          </div>
-          <div class="modal-footer">
-            <p class="modal-delete-msg"></p>
-            <form data-id="{{image._id}}" class="delete-image-form">
-              <input type="hidden" name="image[id]" value="{{image._id}}">
+  <!-- modal for deletion confirmation -->
+  <div class="modal fade deleteModal" id="deleteModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="delteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title deleteModalLabel" id="deleteModalLabel-{{image._id}}">Delete Photo Jar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p> Are you sure you want to delete your Photo Jar FOREVER? </p>
+        </div>
+        <div class="modal-footer">
+          <p class="modal-delete-msg"></p>
+          <form data-id="{{image._id}}" class="delete-image-form">
+            <input type="hidden" name="image[id]" value="{{image._id}}">
             <button type="submit" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}}>Yes, forever.</button>
           </form>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-
-  </section>
-{{/each}}
+  </div>
+</section>

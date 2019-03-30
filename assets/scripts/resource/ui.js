@@ -3,12 +3,16 @@
 const store = require('../store')
 // const store = require('../store.js')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
-// const showUserImagesTemplate = require('../templates/user-images.handlebars')
+const showLastestUploadTemplate = require('../templates/latest-image.handlebars')
 
 const uploadFileSuccess = (responseData) => {
-  $('#image-location').html(`
-      <img alt="user uploaded image" src="${responseData.image.url}" width="100%" />
-      `)
+  // $('#image-location').html(`
+  //     <img alt="user uploaded image" src="${responseData.image.url}" width="100%" />
+  //     `)
+
+  const showLastestUpload = showLastestUploadTemplate({ image: responseData.image })
+  $('#content').prepend(showLastestUpload)
+
   $('form').trigger('reset')
   $('.user-messages').text('Uploaded Successfully!')
   setTimeout(() => {
