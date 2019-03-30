@@ -5,7 +5,6 @@ const showAllImagesTemplate = require('../templates/all-images.handlebars')
 // const showUserImagesTemplate = require('../templates/user-images.handlebars')
 
 const uploadFileSuccess = (responseData) => {
-  console.log('inside uploadFileSuccess: ', responseData)
   $('#image-location').html(`
       <img alt="user uploaded image" src="${responseData.image.url}" width="100%" />
       `)
@@ -36,7 +35,7 @@ const deleteFileSuccess = (id) => {
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
-  $('.modal-backdrop').hide()
+  $('.deleteModal').modal('hide')
   $('body').removeClass('modal-open')
 }
 

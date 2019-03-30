@@ -52,6 +52,7 @@
         <div class="modal-body">
           <form class="update-image-form" data-id={{image._id}}>
             <div class="form-group">
+              <input type="hidden" name="image[id]" value="{{image._id}}">
               <label for="InputImageName">Photo Title:</label>
               <input required type="text" name="image[title]" class="form-control" placeholder="Photo Title" value="{{image.title}}">
             </div>
@@ -85,7 +86,10 @@
           </div>
           <div class="modal-footer">
             <p class="modal-delete-msg"></p>
-            <button type="button" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}} data-dismiss="modal">Yes, forever.</button>
+            <form class="delete-image-form">
+              <input type="hidden" name="image[id]" value="{{image._id}}">
+            <button type="submit" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}}>Yes, forever.</button>
+          </form>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>

@@ -23,18 +23,18 @@ const getFiles = () => {
   })
 }
 
-const updateFile = (data, id) => {
+const updateFile = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/images' + id,
+    url: config.apiUrl + '/images/' + formData.image.id,
     method: 'PATCH',
     headers: { Authorization: 'Token token=' + store.user.token },
-    data
+    data: formData
   })
 }
 
-const deleteFile = (id) => {
+const deleteFile = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/images' + id,
+    url: config.apiUrl + '/images/' + formData.image.id,
     method: 'DELETE',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
