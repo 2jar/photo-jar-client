@@ -1,7 +1,17 @@
 $auth-form-background-color: $white;
 
+
+body {
+  font-family: 'Indie Flower', cursive;
+}
 nav {
   z-index: 100;
+}
+.navbar {
+  background-color: $burgundy;
+  > .navbar-brand {
+      color: $white;
+  }
 }
 
 .dropdown {
@@ -23,7 +33,7 @@ main {
     }
     background: white;
     border: 1px solid;
-    margin: -1px;
+    margin: 10px;
     // border-right: 1px solid;
     cursor: pointer;
     outline: none;

@@ -8,16 +8,18 @@
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
-  <!--/////////////////// Auth CRUD //////////////////////-->
-
   <!-- Navbar! -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <div class="navbar-brand" id="navbar-brand">
       <!-- <img src="public/home-icon-lavender.png" width="40" height="40" class="d-inline-block align-top" alt="photos icon"> -->
@@ -28,78 +30,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <!-- Sign in link/modal -->
-        <!-- <li class="nav-item signed-out-view">
-          <a class="nav-link" data-toggle="modal" data-target=".modal-sign-in" href="#">Photos Sign In</a>
-          <div class="modal fade modal-sign-in" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Photos Sign In</h5>
-                  <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-in-form">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input name="credentials[password]" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn submit">Submit</button>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <p class='sign-in-msg'></p>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-
-          <a class="nav-link" data-toggle="modal" data-target=".modal-register" href="#">Sign up!</a>
-          <div class="modal fade modal-register" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Sign up!</h5>
-                  <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form id="sign-up-form">
-                    <div class="form-group">
-                      <label for="RegisterInputEmail">Email address</label>
-                      <input name="credentials[email]" type="email" class="form-control" id="RegisterInputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="emailHelp" class="form-text text-muted">Please do not put in real information.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="RegisterInputPassword1">Password</label>
-                      <input name="credentials[password]" type="password" class="form-control" id="RegisterInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="RegisterInputPassword2">Confirm Password</label>
-                      <input name="credentials[password_confirmation]" type="password" class="form-control" id="RegisterInputPassword2" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn submit">Submit</button>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <p class='register-msg'></p>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </li> -->
         <!-- Change Password Link/Modal -->
         <li class="nav-item signed-in-view d-none">
           <a class="nav-link" data-toggle="modal" data-target=".modal-change-pw" href="#">Change Password</a>
@@ -182,6 +112,7 @@
 
   <main>
     <!-- auth transition START-->
+
 <div class="initial-auth-form">
   <div class="sign-in-div">
     <form id="sign-in-form">
@@ -215,7 +146,7 @@
         <input type="submit" id="upload-button"/>
       </form>
       <section id="image-location"></section>
-      <section id="content"></section>
+      <section id="content" class="content"></section>
   </main>
 </body>
 
