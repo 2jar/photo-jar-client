@@ -1,17 +1,95 @@
 {{#each images as |image|}}
 <!-- unsure of image properties -->
-  <section id="{{image._id}} class="image-jar signed-out-view" data-id="{{image._id}}">
-    <h4>{{image.title}}</h4><br>
+  <section id="{{image._id}}" class="image-jar" data-id="{{image._id}}">
+    <!-- <h4>{{image.title}}</h4><br> -->
     <img alt="user uploaded image" src="{{image.url}}" width="100%"/>
-    <p>
+    <!-- <p>
       <small>Tag:</small> {{image.tag}}
-    </p>
+    </p> -->
     <hr>
     {{#if image.editable}}
-      <p>✅ You own this image</p>
+    <section class="is-editable" data-overlay>
+      <!-- <p>✅ You own this image</p> -->
+      <h6>{{image.title}}</h6>
+      <h6>{{image.tag}}</h6>
+      <!-- button divs -->
+      <div>
+        <!-- Update Photo Jar Button trigger modal -->
+        <button type="button" class="btn update-btn btn submit btn-primary" data-toggle="modal" data-target="#updateModal-{{image._id}}">
+          Update
+        </button>
+
+        <!-- Delete Button trigger modal -->
+        <button type="button" class=" btn submit btn-danger" data-toggle="modal" data-target="#deleteModal-{{image._id}}">
+          Delete
+        </button>
+
+      <div>
+        <!-- Update Photo Jar Button modal form-->
+
+    </section>
     {{else}}
-      <p>❌ You do not own this image</p>
+    <section class="not-editable" data-overlay>
+      <!-- <p>❌ You do not own this image</p> -->
+      <h6>{{image.title}}</h6>
+      <h6>{{image.tag}}</h6>
+
+    </section>
     {{/if}}
   </section>
+  </section>
+
+  <!-- modal for update-->
+  <div class="modal fade" id="updateModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateModalLabel-{{image._id}}">Update Your Photo Jar:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="update-image-form" data-id={{image._id}}>
+            <div class="form-group">
+              <label for="InputImageName">Photo Title:</label>
+              <input required type="text" name="image[title]" class="form-control" placeholder="Photo Title" value="{{image.title}}">
+            </div>
+            <div class="form-group">
+              <label for="InputImageTag">Photo Tag:</label>
+              <input type="text" name="image[tag]" class="form-control" placeholder="Photo Tag" value="{{image.tag}}">
+            </div>
+            <input type="submit" class="btn btn-primary submit" value="Save Changes">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p class="modal-update-msg"></p>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- modal for deletion confirmation -->
+    <div class="modal fade deleteModal" id="deleteModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="delteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title deleteModalLabel" id="deleteModalLabel-{{image._id}}">Delete Photo Jar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p> Are you sure you want to delete your Photo Jar FOREVER? </p>
+          </div>
+          <div class="modal-footer">
+            <p class="modal-delete-msg"></p>
+            <button type="button" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}} data-dismiss="modal">Yes, forever.</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 {{/each}}

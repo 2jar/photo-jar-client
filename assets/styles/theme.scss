@@ -45,6 +45,42 @@ main {
     }
   }
 
+.is-editable {
+  display: none;
+}
+.image-jar:hover > .is-editable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  background: rgba(255,255,255,0.5);
+  content: '' attr(data-overlay);
+}
+
+.not-editable {
+display: none;
+}
+
+.image-jar:hover > .not-editable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+  background: rgba(255,255,255,0.5);
+  content: '' attr(data-overlay);
+}
+
+
   .content {
     @include make-row;
   }
