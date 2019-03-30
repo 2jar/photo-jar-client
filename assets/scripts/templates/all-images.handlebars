@@ -36,8 +36,6 @@
 
     </section>
     {{/if}}
-  </section>
-  </section>
 
   <!-- modal for update-->
   <div class="modal fade" id="updateModal-{{image._id}}" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
@@ -86,7 +84,7 @@
           </div>
           <div class="modal-footer">
             <p class="modal-delete-msg"></p>
-            <form class="delete-image-form">
+            <form data-id="{{image._id}}" class="delete-image-form">
               <input type="hidden" name="image[id]" value="{{image._id}}">
             <button type="submit" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}}>Yes, forever.</button>
           </form>
@@ -96,4 +94,5 @@
       </div>
     </div>
 
+  </section>
 {{/each}}
