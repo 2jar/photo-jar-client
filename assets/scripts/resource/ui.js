@@ -8,7 +8,7 @@ const uploadFileSuccess = (responseData) => {
   const showLastestUpload = showLastestUploadTemplate({ image: responseData.image })
   $('#content').prepend(showLastestUpload)
   $('.owner-' + responseData.image._id).text('Owner username: ' + store.user.email)
-
+  $('#upload-photo-modal').modal('hide')
   $('form').trigger('reset')
   $('.user-messages').text('Uploaded Successfully!')
   setTimeout(() => {

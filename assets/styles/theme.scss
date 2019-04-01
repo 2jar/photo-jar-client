@@ -160,3 +160,32 @@ display: none;
     }
   }
 }
+
+.upload-inputs {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.upload-lables {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 1.8em;
+  margin-right: .5em;
+}
+
+.upload-lines {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.welcome-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
+}
