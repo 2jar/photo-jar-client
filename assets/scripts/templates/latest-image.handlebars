@@ -13,7 +13,7 @@
       <h6 id="tag-{{image._id}}">Tag: {{image.tag}}</h6>
       <h6 id="created-{{image._id}}">Created: {{image.createdAt}}</h6>
       <h6 id="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
-      <h6 id="owner-{{image._id}}">Owner ID: {{image.owner}}</h6>
+      <h6 id="owner-{{image._id}}">Owner username: {{image.owner.email}}</h6>
       <!-- button divs -->
       <div>
         <!-- Download button -->
@@ -44,7 +44,7 @@
       <h6 id="tag-{{image._id}}">Tag: {{image.tag}}</h6>
       <h6 id="created-{{image._id}}">Created: {{image.createdAt}}</h6>
       <h6 id="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
-      <h6 id="owner-{{image._id}}">Owner ID: {{image.owner}}</h6>
+      <h6 id="owner-{{image._id}}">Owner username: {{image.owner.email}}</h6>
 
       <!-- Download button -->
       <a href="{{image.url}}" target="_blank">
