@@ -3,7 +3,7 @@
 const store = require('../store')
 // const store = require('../store.js')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
-const showLastestUploadTemplate = require('../templates/latest-image.handlebars')
+const showLastestUploadTemplate = require('../templates/image-item.handlebars')
 
 const uploadFileSuccess = (responseData) => {
   // $('#image-location').html(`
@@ -12,7 +12,7 @@ const uploadFileSuccess = (responseData) => {
 
   const showLastestUpload = showLastestUploadTemplate({ image: responseData.image })
   $('#content').prepend(showLastestUpload)
-  $('#owner-' + responseData.image._id).text('Owner username: ' + store.user.email)
+  $('.owner-' + responseData.image._id).text('Owner username: ' + store.user.email)
 
   $('form').trigger('reset')
   $('.user-messages').text('Uploaded Successfully!')
@@ -34,9 +34,9 @@ const updateFileSuccess = (responseData) => {
   }, 2000)
   $('.modal-backdrop').hide()
   $('.modal').modal('hide')
-  $('#title-' + responseData.image._id).text('Title: ' + responseData.image.title)
-  $('#tag-' + responseData.image._id).text('Tag: ' + responseData.image.tag)
-  $('#modified-' + responseData.image._id).text('Modified: ' + responseData.image.updatedAt)
+  $('.title-' + responseData.image._id).text('Title: ' + responseData.image.title)
+  $('.tag-' + responseData.image._id).text('Tag: ' + responseData.image.tag)
+  $('.modified-' + responseData.image._id).text('Modified: ' + responseData.image.updatedAt)
   $('body').removeClass('modal-open')
 }
 
