@@ -4,8 +4,10 @@
 
   <hr>
 
-  <h6><span class="title-{{image._id}}">{{image.title}}</span></h6>
-  <h6><span class="tag-{{image._id}}">{{image.tag}}</span></h6>
+  <div class= "handwritten">
+    <h6><span class="title-{{image._id}}">{{image.title}}</span></h6>
+    <h6><span class="tag-{{image._id}}">{{image.tag}}</span></h6>
+  </div>
 
   {{#if image.editable}}
     <section class="is-editable" data-overlay>
