@@ -13,9 +13,6 @@ nav {
 }
 .navbar {
   background-color: $burgundy;
-  // > .sign-out {
-  //   color: $white;
-  // }
 }
 
 .dropdown {
@@ -25,10 +22,6 @@ nav {
 // handlejars styling- basic boxes
 main {
   // background-image: url('../../public/bg.jpg') no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover;
 
   @include make-container;
   @include make-container-max-widths;
@@ -190,10 +183,6 @@ display: none;
   flex-direction: column;
   justify-content: flex-start;
 }
-
-// input {
-//   border: 1px inset black;
-// }
 
 .upload-lables {
   align-items: flex-end;
