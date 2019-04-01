@@ -4,13 +4,13 @@
 
   <hr>
 
-  <h6 class="title-{{image._id}}">Title: {{image.title}}</h6>
-  <h6 class="tag-{{image._id}}">Tag: {{image.tag}}</h6>
+  <h6><span class="title-{{image._id}}">{{image.title}}</span></h6>
+  <h6><span class="tag-{{image._id}}">{{image.tag}}</span></h6>
 
   {{#if image.editable}}
     <section class="is-editable" data-overlay>
-      <h6 class="title-{{image._id}}">Title: {{image.title}}</h6>
-      <h6 class="tag-{{image._id}}">Tag: {{image.tag}}</h6>
+      <h6>Title: <span class="title-{{image._id}}">{{image.title}}</span></h6>
+      <h6>Tag: <span class="tag-{{image._id}}">{{image.tag}}</span></h6>
       <h6 class="created-{{image._id}}">Created: {{image.createdAt}}</h6>
       <h6 class="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
       <h6 class="owner-{{image._id}}">Owner username: {{image.owner.email}}</h6>
