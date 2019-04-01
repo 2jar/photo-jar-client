@@ -2,6 +2,10 @@ $auth-form-background-color: $white;
 
 
 body {
+  background: url('public/bg.jpg');
+  background-size: 100%;
+  background-repeat-x: no-repeat;
+
   font-family: 'Indie Flower', cursive;
 }
 nav {
@@ -20,6 +24,12 @@ nav {
 
 // handlejars styling- basic boxes
 main {
+  // background-image: url('../../public/bg.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+
   @include make-container;
   @include make-container-max-widths;
 
