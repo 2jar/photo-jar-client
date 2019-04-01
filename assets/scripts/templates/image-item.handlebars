@@ -4,10 +4,8 @@
 
   <hr>
 
-  <div class= "handwritten">
-    <h6><span class="title-{{image._id}}">{{image.title}}</span></h6>
-    <h6><span class="tag-{{image._id}}">{{image.tag}}</span></h6>
-  </div>
+  <h6><span class="title-{{image._id}}">{{image.title}}</span></h6>
+  <h6><span class="tag-{{image._id}}">{{image.tag}}</span></h6>
 
   {{#if image.editable}}
     <section class="is-editable" data-overlay>
@@ -26,9 +24,9 @@
         </a>
 
         <!-- Map button -->
-          <button type="button" class="btn btn-secondary open-map" data-id="{{image._id}}">
-            Map
-          </button>
+        <button type="button" class="btn btn-success open-map" data-id="{{image._id}}">
+          Map
+        </button>
 
         <!-- Update Photo Jar Button trigger modal -->
         <button type="button" class="btn update-btn btn submit btn-primary" data-toggle="modal" data-target="#updateModal-{{image._id}}">
@@ -56,6 +54,12 @@
             Open
           </button>
         </a>
+
+        <!-- Map button -->
+        <button type="button" class="btn btn-success open-map" data-id="{{image._id}}">
+          Map
+        </button>
+
       </div>
 
     </section>

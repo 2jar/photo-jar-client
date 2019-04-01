@@ -1,5 +1,4 @@
-//  onUploadFile, onCRUD & event handlers
-'use strict'
+'use strict' /* global google, map */ // eslint-disable-line no-unused-vars
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
@@ -34,7 +33,13 @@ const onDeleteFile = (event) => {
 
 const onOpenMap = (event) => {
   console.log('inside onOpenMap')
-  const img = $('#image-' + $(event.target).data('id')).get()[0]
+  if (store.infoWindow) {
+    store.infoWindow.close(map)
+  }
+
+  const id = $(event.target).data('id')
+  const img = $('#image-' + id).get()[0]
+  const url = img.getAttribute('src')
 
   exifJs.EXIF.getData(img, function () {
     const exifLong = exifJs.EXIF.getTag(this, 'GPSLongitude')
@@ -43,10 +48,12 @@ const onOpenMap = (event) => {
     const exifLatRef = exifJs.EXIF.getTag(this, 'GPSLatitudeRef')
     console.log('exifLong: ', exifLong)
     if (typeof exifLong !== 'undefined') {
-      console.log('Lat/Long: ', gpsToDecimalLatLong(exifLat, exifLatRef, exifLong, exifLongRef))
+      store.infoWindow = ui.pinAndMoveToPhotoLocation(url, gpsToDecimalLatLong(exifLat, exifLatRef, exifLong, exifLongRef))
+      ui.openMapModal()
     } else {
-      console.log('image has no GPS data')
+      ui.openNoMapModal()
     }
+
   })
 }
 

@@ -1,9 +1,8 @@
-//  on successes & failures
-'use strict'
+'use strict' /* global google, map */ // eslint-disable-line no-unused-vars
+
 const store = require('../store')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
 const showLastestUploadTemplate = require('../templates/image-item.handlebars')
-
 
 const uploadFileSuccess = (responseData) => {
   const showLastestUpload = showLastestUploadTemplate({ image: responseData.image })
@@ -49,6 +48,28 @@ const deleteFileSuccess = () => {
   }, 400)
 }
 
+const pinAndMoveToPhotoLocation = function (url, coordinates) {
+  const infoWindow = new google.maps.InfoWindow()
+  const pos = {
+    lat: coordinates[0],
+    lng: coordinates[1]
+  }
+  infoWindow.setPosition(pos)
+  infoWindow.setContent(`<img alt="user uploaded image" src="${url}" width="100%">`)
+  infoWindow.setOptions({maxWidth: 125})
+  infoWindow.open(map)
+  map.setCenter(pos)
+  return infoWindow
+}
+
+const openMapModal = function () {
+  $('.maps-modal').modal('show')
+}
+
+const openNoMapModal = function () {
+  $('.no-maps-modal').modal('show')
+}
+
 const failure = () => {
   $('form').trigger('reset')
   $('.user-messages').text('Something went wrong.')
@@ -65,5 +86,8 @@ module.exports = {
   getFilesSuccess,
   updateFileSuccess,
   deleteFileSuccess,
+  pinAndMoveToPhotoLocation,
+  openMapModal,
+  openNoMapModal,
   failure
 }
