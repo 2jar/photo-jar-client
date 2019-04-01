@@ -20,10 +20,15 @@
 
         <!-- Open button -->
         <a href="{{image.url}}" target="_blank">
-          <button type="button" class="btn btn-secondary" data-toggle="modal">
+          <button type="button" class="btn btn-secondary">
             Open
           </button>
         </a>
+
+        <!-- Map button -->
+          <button type="button" class="btn btn-secondary open-map" data-id="{{image._id}}">
+            Map
+          </button>
 
         <!-- Update Photo Jar Button trigger modal -->
         <button type="button" class="btn update-btn btn submit btn-primary" data-toggle="modal" data-target="#updateModal-{{image._id}}">
