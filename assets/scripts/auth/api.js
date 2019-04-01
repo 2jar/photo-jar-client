@@ -45,6 +45,4 @@ module.exports = {
   signIn,
   signOut,
   changePassword
-  // store
-  // config
 }

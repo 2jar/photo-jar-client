@@ -1,15 +1,10 @@
 //  on successes & failures
 'use strict'
 const store = require('../store')
-// const store = require('../store.js')
 const showAllImagesTemplate = require('../templates/all-images.handlebars')
 const showLastestUploadTemplate = require('../templates/image-item.handlebars')
 
 const uploadFileSuccess = (responseData) => {
-  // $('#image-location').html(`
-  //     <img alt="user uploaded image" src="${responseData.image.url}" width="100%" />
-  //     `)
-
   const showLastestUpload = showLastestUploadTemplate({ image: responseData.image })
   $('#content').prepend(showLastestUpload)
   $('.owner-' + responseData.image._id).text('Owner username: ' + store.user.email)
@@ -49,7 +44,6 @@ const deleteFileSuccess = () => {
   setTimeout(() => {
     $('#' + store.imageId).remove()
   }, 400)
-  console.log('this is store image id', store.imageId)
 }
 
 const failure = () => {
