@@ -50,7 +50,7 @@
     </div>
 
   </nav>
-<!-- About 2JAR Modal -->
+  <!-- About 2JAR Modal -->
   <div class="modal fade modal-about" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -78,7 +78,7 @@
     </div>
   </div>
 
-<!--Change PW Modal -->
+  <!--Change PW Modal -->
   <div class="modal fade modal-change-pw" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -110,43 +110,60 @@
   </div>
 
   <main>
-    <!-- auth transition START-->
 
-<div class="initial-auth-form">
-  <div class="sign-in-div">
-    <form id="sign-in-form">
-      <label>Sign in to Photo Jar</label>
-      <input id="sign-in-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
-      <input name="credentials[password]" required type="password" placeholder="Password Here" />
-      <input type="submit" value="Sign In!" />
-    </form>
-    <small class="form-text text-muted">No account yet? <a id="register-reveal" href="#">Register for free!</a></small>
-  </div>
-  <div class="sign-up-div">
-    <form id="sign-up-form">
-      <label>Sign up for Photo Jar</label>
-      <input id="sign-up-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
-      <input name="credentials[password]" required type="password" placeholder="Password Here" />
-      <input name="credentials[password_confirmation]" required type="password" placeholder="Confirm Password" />
-      <input type="submit" value="Sign Up!" />
-    </form>
-    <small class="form-text text-muted">Already have an account? <a id="sign-in-reveal" href="#">Sign in.</a></small>
-  </div>
-</div>
-<!-- auth transition END-->
-    <section class="hello"></section>
+    <!-- auth transition area START-->
+    <div class="initial-auth-form">
+      <div class="sign-in-div">
+        <form id="sign-in-form">
+          <label>Sign in to Photo Jar</label>
+          <input id="sign-in-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
+          <input name="credentials[password]" required type="password" placeholder="Password Here" />
+          <input type="submit" value="Sign In!" />
+        </form>
+        <small class="form-text text-muted">No account yet? <a id="register-reveal" href="#">Register for free!</a></small>
+      </div>
+      <div class="sign-up-div">
+        <form id="sign-up-form">
+          <label>Sign up for Photo Jar</label>
+          <input id="sign-up-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
+          <input name="credentials[password]" required type="password" placeholder="Password Here" />
+          <input name="credentials[password_confirmation]" required type="password" placeholder="Confirm Password" />
+          <input type="submit" value="Sign Up!" />
+        </form>
+        <small class="form-text text-muted">Already have an account? <a id="sign-in-reveal" href="#">Sign in.</a></small>
+      </div>
+    </div>
+    <!-- auth transition END-->
     <section class="user-messages"></section>
-<!-- Upload file form -->
-    <form id="upload-form" enctype="multipart/form-data">
-        <label for="upload-file">PHOTO TIME</label>
-        <br>
-        <input type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif">
-        <input type="text" name="title" required>
-        <input type="submit" id="upload-button"/>
-      </form>
-      <section id="image-location"></section>
-      <section id="content" class="content"></section>
+    <section class="hello"></section>
+    <!-- Upload file form -->
+    <section id="content" class="content"></section>
   </main>
+
+  <!--Upload Photo Modal -->
+  <div class="modal fade modal-upload" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Upload Photo</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif">
+            <input type="text" name="title" required>
+            <input type="submit" id="upload-button" />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p class='upload-msg'></p>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
