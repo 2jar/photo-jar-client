@@ -2,6 +2,10 @@ $auth-form-background-color: $white;
 
 
 body {
+  background: url('public/bg.jpg');
+  background-size: 100%;
+  background-repeat-x: no-repeat;
+
   font-family: 'Indie Flower', cursive;
 }
 nav {
@@ -9,9 +13,9 @@ nav {
 }
 .navbar {
   background-color: $burgundy;
-  > .navbar-brand {
-      color: $white;
-  }
+  // > .sign-out {
+  //   color: $white;
+  // }
 }
 
 .dropdown {
@@ -20,6 +24,12 @@ nav {
 
 // handlejars styling- basic boxes
 main {
+  // background-image: url('../../public/bg.jpg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+
   @include make-container;
   @include make-container-max-widths;
 
@@ -67,7 +77,7 @@ main {
   right: 0;
   bottom: 0;
   left:0;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
 }
 
@@ -85,7 +95,7 @@ display: none;
   right: 0;
   bottom: 0;
   left:0;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
 }
 
