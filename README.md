@@ -81,6 +81,34 @@ When one of us exhausted our individual ability to debug a situation, we discuss
 
 Finally, if an answer hasn't been found, we create a showcase of the problem, including example code, the steps to reproduce the problem, and what we've attempted so far, and we use this to ask for help from colleagues and the community of programers.
 
+## Wireframe
+Link: https://imgur.com/kVIVsjR
+
+## User Stories
++ As an unregistered user, I would like to sign up with email and password.
++ As a registered user, I would like to sign in with email and password.
++ As a signed in user, I would like to change password.
++ As a signed in user, I would like to sign out.
++ As a signed in user, I would like to upload an image to AWS.
++ As a signed in user, I would like to update the meta-data of my image on AWS.
++ As a signed in user, I would like to see the name of all images on AWS.
++ As a signed in user, I would like to see the thumbnail of all images on AWS.
++ As a signed in user, I would like to delete the reference of my image from the database.
++ As a signed in user, I would like to see the following meta-data for any image:
+- date created/uploaded
+- date modified
+- owner (user who uploaded the image)
+- tag
+
+#### Reach Goal(s)
++ "collaborators" can be chosen; they have permission to read from and write to images.
++ As a signed in user, I would like to download images from AWS.
+
+#### Team User Stories:
++ As a user, I would like the app to function properly on my mobile device.
++ As a front-end developer, I would like to have RESTful routes.
+
+
 ## Unsolved Problems & Future Direction
 - Accessibility standardization for form fields
 - Allow users to add tags to images which they do not own.
