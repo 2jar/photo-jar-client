@@ -5,14 +5,19 @@ body {
   background: url('public/bg.jpg');
   background-size: 100%;
   background-repeat-x: no-repeat;
-
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Aleo', serif;
 }
+
 nav {
   z-index: 100;
 }
+
 .navbar {
   background-color: $burgundy;
+  > .navbar-brand {
+      color: $white;
+      font-family: 'Indie Flower', cursive;
+  }
 }
 
 .dropdown {
@@ -55,6 +60,9 @@ main {
       color: black;
       display: block;
       font-size: 1rem;
+    }
+    .handwritten {
+      font-family: 'Indie Flower', cursive;
     }
   }
 
