@@ -76,7 +76,7 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  $('#content').text('')
+  $('#content').empty()
   $('.user-messages').text('Goodbye!')
   $('.navbar-collapse').collapse('hide')
   $('.signed-out-view').removeClass('d-none')
@@ -97,6 +97,7 @@ const signOutFailure = () => {
   setTimeout(() => {
     $('.user-messages').text('')
   }, 2000)
+  signOutSuccess()
 }
 
 module.exports = {
