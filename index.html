@@ -137,7 +137,7 @@
     <section class="user-messages"></section>
     <div class="welcome-area">
       <section class="hello"></section>
-      <button type="button" data-toggle="modal" data-target="#upload-photo-modal">Upload a Photo</button>
+      <button class="btn btn-light" type="button" data-toggle="modal" data-target="#upload-photo-modal">Upload a Photo</button>
     </div>
     <!-- Upload file form -->
     <section id="content" class="content"></section>
@@ -156,18 +156,18 @@
         <form id="upload-form" enctype="multipart/form-data">
           <div class="modal-body upload-lines">
             <div class="upload-lables">
-              <div>Pick an image: </div>
-              <div>Set a title: </div>
-              <div>Set a tag: </div>
+              <div>Image: </div>
+              <div>Title: </div>
+              <div>Tag: </div>
             </div>
             <div class="upload-inputs">
-              <input type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif">
-              <input type="text" name="title" required>
-              <input type="text" name="tag" required>
+              <input class="form-control" type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif">
+              <input class="form-control" type="text" name="title" placeholder="Enter a title" required>
+              <input class="form-control" type="text" name="tag" placeholder="Enter a tag" required>
             </div>
           </div>
           <div class="modal-footer">
-            <input type="submit" id="upload-button" />
+            <input class="btn btn-light" type="submit" id="upload-button" />
           </div>
         </form>
       </div>
