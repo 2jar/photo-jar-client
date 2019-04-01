@@ -30,7 +30,9 @@ const updateFileSuccess = (responseData) => {
   $('.modal-backdrop').hide()
   $('.modal').modal('hide')
   $('.title-' + responseData.image._id).text('Title: ' + responseData.image.title)
+  $('.update-title-input-' + responseData.image._id).val(responseData.image.title)
   $('.tag-' + responseData.image._id).text('Tag: ' + responseData.image.tag)
+  $('.update-tag-input-' + responseData.image._id).val(responseData.image.tag)
   $('.modified-' + responseData.image._id).text('Modified: ' + responseData.image.updatedAt)
   $('body').removeClass('modal-open')
 }
