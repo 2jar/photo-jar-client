@@ -168,12 +168,16 @@ display: none;
   justify-content: flex-start;
 }
 
+// input {
+//   border: 1px inset black;
+// }
+
 .upload-lables {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  line-height: 1.8em;
+  line-height: 2.5em;
   margin-right: .5em;
 }
 
