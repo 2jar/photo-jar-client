@@ -9,9 +9,9 @@ nav {
 }
 .navbar {
   background-color: $burgundy;
-  > .navbar-brand {
-      color: $white;
-  }
+  // > .sign-out {
+  //   color: $white;
+  // }
 }
 
 .dropdown {
@@ -67,7 +67,7 @@ main {
   right: 0;
   bottom: 0;
   left:0;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
 }
 
@@ -85,7 +85,7 @@ display: none;
   right: 0;
   bottom: 0;
   left:0;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
 }
 
