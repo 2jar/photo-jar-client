@@ -34,12 +34,7 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (responseData) => {
-  $('.hello').text(` Hello, ${responseData.user.email}!`)
-  $('.user-messages').text(`Successfully signed in!`)
-  setTimeout(() => {
-    $('.user-messages').text('')
-  }, 2000)
-  $('.hello').text(` Hello, ${responseData.user.email}!`)
+  $('.hello').text(`Welcome, ${responseData.user.email}!`)
   $('form').trigger('reset')
   // Closes sign-in modal on successful sign in
   $('.modal-sign-in').modal('toggle')
