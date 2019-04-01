@@ -26,10 +26,10 @@ const signUpSuccess = () => {
 }
 
 const signUpFailure = () => {
-  $('.register-msg').text('Something went wrong. Try a different email.')
+  $('.user-messages').text('Something went wrong. Try a different email.')
   $('form').trigger('reset')
   setTimeout(() => {
-    $('.register-msg').text('')
+    $('.user-messages').text('')
   }, 2000)
 }
 
@@ -52,10 +52,10 @@ const signInSuccess = (responseData) => {
 }
 
 const signInFailure = () => {
-  $('.sign-in-msg').text('Something went wrong, please try again!')
+  $('.user-messages').text('Something went wrong, please try again!')
   $('form').trigger('reset')
   setTimeout(() => {
-    $('.sign-in-msg').text('')
+    $('.user-messages').text('')
   }, 2000)
 }
 
