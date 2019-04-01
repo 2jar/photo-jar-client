@@ -8,6 +8,19 @@ body {
   font-family: 'Aleo', serif;
 }
 
+.user-messages {
+  color: $white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.sign-in-div,
+.sign-up-div {
+  background: url('public/jar-photo.jpg');
+  background-size: 100%;
+  background-repeat-x: no-repeat;
+}
+
 nav {
   z-index: 100;
 }
