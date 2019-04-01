@@ -41,6 +41,7 @@ main {
     cursor: pointer;
     outline: none;
     padding: 1rem;
+    overflow: hidden;
 
     p {
       margin-bottom: 0;
@@ -72,6 +73,7 @@ main {
   left:0;
   background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
+  overflow: hidden;
 }
 
 .not-editable {
@@ -90,6 +92,7 @@ display: none;
   left:0;
   background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
+  overflow: hidden;
 }
 
 
