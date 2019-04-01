@@ -11,8 +11,8 @@
     <section class="is-editable" data-overlay>
       <h6>Title: <span class="title-{{image._id}}">{{image.title}}</span></h6>
       <h6>Tag: <span class="tag-{{image._id}}">{{image.tag}}</span></h6>
-      <h6 class="created-{{image._id}}">Created: {{image.createdAt}}</h6>
-      <h6 class="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
+      <h6 class="created-{{image._id}}">Created: {{dateFormat image.createdAt}}</h6>
+      <h6 class="modified-{{image._id}}">Modified: {{dateFormat image.updatedAt}}</h6>
       <h6 class="owner-{{image._id}}">Owner username: {{image.owner.email}}</h6>
       <div>
 
@@ -44,8 +44,8 @@
     <section class="not-editable" data-overlay>
       <h6 class="title-{{image._id}}">Title: {{image.title}}</h6>
       <h6 class="tag-{{image._id}}">Tag: {{image.tag}}</h6>
-      <h6 class="created-{{image._id}}">Created: {{image.createdAt}}</h6>
-      <h6 class="modified-{{image._id}}">Modified: {{image.updatedAt}}</h6>
+      <h6 class="created-{{image._id}}">Created: {{dateFormat image.createdAt}}</h6>
+      <h6 class="modified-{{image._id}}">Modified: {{dateFormat image.updatedAt}}</h6>
       <h6 class="owner-{{image._id}}">Owner username: {{image.owner.email}}</h6>
       <div>
         <!-- Open button -->
@@ -80,11 +80,11 @@
             <div class="form-group">
               <input type="hidden" name="image[id]" value="{{image._id}}">
               <label for="InputImageName">Photo Title:</label>
-              <input class="update-title-input-{{image._id}}" required type="text" name="image[title]" class="form-control" placeholder="Photo Title" value="{{image.title}}">
+              <input class="update-title-input-{{image._id}}" maxlength="30"required type="text" name="image[title]" class="form-control" placeholder="Photo Title" value="{{image.title}}">
             </div>
             <div class="form-group">
               <label for="InputImageTag">Photo Tag:</label>
-              <input class="update-tag-input-{{image._id}}" type="text" name="image[tag]" class="form-control" placeholder="Photo Tag" value="{{image.tag}}">
+              <input class="update-tag-input-{{image._id}}" maxlength="30" type="text" name="image[tag]" class="form-control" placeholder="Photo Tag" value="{{image.tag}}">
             </div>
             <input type="submit" class="btn btn-primary submit" value="Save Changes">
           </form>
