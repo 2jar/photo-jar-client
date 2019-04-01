@@ -32,11 +32,6 @@ const onDeleteFile = (event) => {
 }
 
 const onOpenMap = (event) => {
-  console.log('inside onOpenMap')
-  if (store.infoWindow) {
-    store.infoWindow.close(map)
-  }
-
   const id = $(event.target).data('id')
   const img = $('#image-' + id).get()[0]
   const url = img.getAttribute('src')
@@ -46,14 +41,12 @@ const onOpenMap = (event) => {
     const exifLongRef = exifJs.EXIF.getTag(this, 'GPSLongitudeRef')
     const exifLat = exifJs.EXIF.getTag(this, 'GPSLatitude')
     const exifLatRef = exifJs.EXIF.getTag(this, 'GPSLatitudeRef')
-    console.log('exifLong: ', exifLong)
     if (typeof exifLong !== 'undefined') {
       store.infoWindow = ui.pinAndMoveToPhotoLocation(url, gpsToDecimalLatLong(exifLat, exifLatRef, exifLong, exifLongRef))
       ui.openMapModal()
     } else {
       ui.openNoMapModal()
     }
-
   })
 }
 

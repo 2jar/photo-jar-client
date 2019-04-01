@@ -57,8 +57,8 @@ const pinAndMoveToPhotoLocation = function (url, coordinates) {
   infoWindow.setPosition(pos)
   infoWindow.setContent(`<img alt="user uploaded image" src="${url}" width="100%">`)
   infoWindow.setOptions({maxWidth: 125})
-  infoWindow.open(map)
-  map.setCenter(pos)
+  infoWindow.open(store.map)
+  store.map.setCenter(pos)
   return infoWindow
 }
 
