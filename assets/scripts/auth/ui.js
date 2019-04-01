@@ -50,9 +50,7 @@ const signInSuccess = (responseData) => {
   // this should make the sign in view display on succesful sign-in
   $('.signed-in-view').removeClass('d-none')
   fadeOutAuth()
-  // save the token
   store.user = responseData.user
-  // get and display all images
   resourceApi.getFiles()
     .then(resourceUi.getFilesSuccess)
     .catch(resourceUi.failure)
@@ -83,17 +81,11 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  // console.log('About to clear content!')
   $('#content').text('')
-  // console.log('Just cleared content!')
   $('.user-messages').text('Goodbye!')
-  // $('#change-pw-button').addClass('d-none')
   $('.navbar-collapse').collapse('hide')
   $('.signed-out-view').removeClass('d-none')
   $('.signed-in-view').addClass('d-none')
-  // console.log('About to display all photoss again!')
-  // How do i trigger on refresh photoss to run again from here???
-  // photosEvents.onGetphotoss()
 
   // clear the "hello, user" message
   $('.hello').text('')
@@ -111,7 +103,7 @@ const signOutFailure = () => {
     $('.user-messages').text('')
   }, 2000)
 }
-//
+
 module.exports = {
   signUpSuccess,
   signUpFailure,

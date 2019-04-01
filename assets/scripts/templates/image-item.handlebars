@@ -9,7 +9,6 @@
 
   {{#if image.editable}}
     <section class="is-editable" data-overlay>
-      <!-- <p>✅ You own this image</p> -->
       <h6 class="title-{{image._id}}">Title: {{image.title}}</h6>
       <h6 class="tag-{{image._id}}">Tag: {{image.tag}}</h6>
       <h6 class="created-{{image._id}}">Created: {{image.createdAt}}</h6>
@@ -38,7 +37,6 @@
     </section>
   {{else}}
     <section class="not-editable" data-overlay>
-      <!-- <p>❌ You do not own this image</p> -->
       <h6 class="title-{{image._id}}">Title: {{image.title}}</h6>
       <h6 class="tag-{{image._id}}">Tag: {{image.tag}}</h6>
       <h6 class="created-{{image._id}}">Created: {{image.createdAt}}</h6>
@@ -99,13 +97,13 @@
           </button>
         </div>
         <div class="modal-body">
-          <p> Are you sure you want to delete your Photo Jar FOREVER? </p>
+          <p> You are about to delete your photo, please confirm.</p>
         </div>
         <div class="modal-footer">
           <p class="modal-delete-msg"></p>
           <form data-id="{{image._id}}" class="delete-image-form">
             <input type="hidden" name="image[id]" value="{{image._id}}">
-            <button type="submit" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}}>Yes, forever.</button>
+            <button type="submit" class="delete-btn btn submit btn-danger delete-image-button" data-id={{image._id}}>Yes, delete.</button>
           </form>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
