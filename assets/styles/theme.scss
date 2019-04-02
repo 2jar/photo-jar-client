@@ -1,11 +1,14 @@
 $auth-form-background-color: $white;
 
-
 body {
-  background: url('public/bg.jpg');
+  background: url("public/bg.jpg");
   background-size: 100%;
   background-repeat-x: no-repeat;
   font-family: 'Aleo', serif;
+}
+
+img {
+  image-orientation: from-image;
 }
 
 .user-messages {
@@ -16,7 +19,7 @@ body {
 
 .sign-in-div,
 .sign-up-div {
-  background: url('public/jar-photo.jpg');
+  background: url("public/jar-photo.jpg");
   background-size: 100%;
   background-repeat-x: no-repeat;
 }
@@ -27,30 +30,31 @@ nav {
 
 .navbar {
   background-color: $burgundy;
+
   > .navbar-brand {
-      color: $white;
-      font-family: 'Indie Flower', cursive;
-        .title {
-          margin-bottom: 0;
-        }
+    color: $white;
+    font-family: 'Indie Flower', cursive;
+
+    .title {
+      margin-bottom: 0;
+    }
   }
 }
 
 .dropdown {
   position: relative;
 }
-
 // handlejars styling- basic boxes
-main {
-.hello {
-  color: $white;
-  font-weight: bold;
-}
-  // background-image: url('../../public/bg.jpg') no-repeat center center fixed;
 
+main {
+  .hello {
+    color: $white;
+    font-weight: bold;
+  }
+  // background-image: url('../../public/bg.jpg') no-repeat center center fixed;
   // @include make-container;
   // @include make-container-max-widths;
-padding: 1rem;
+  padding: 1rem;
 
   .content {
     @include media-breakpoint-up(sm) {
@@ -92,6 +96,7 @@ padding: 1rem;
       display: block;
       font-size: 1rem;
     }
+
     .handwritten {
       font-family: 'Indie Flower', cursive;
     }
@@ -101,6 +106,7 @@ padding: 1rem;
 .is-editable {
   display: none;
 }
+
 .image-jar:hover > .is-editable {
   display: flex;
   flex-direction: column;
@@ -110,14 +116,14 @@ padding: 1rem;
   top: 0;
   right: 0;
   bottom: 0;
-  left:0;
+  left: 0;
   background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
   overflow: hidden;
 }
 
 .not-editable {
-display: none;
+  display: none;
 }
 
 .image-jar:hover > .not-editable {
@@ -129,7 +135,7 @@ display: none;
   top: 0;
   right: 0;
   bottom: 0;
-  left:0;
+  left: 0;
   background: rgba(255, 255, 255, .5);
   content: '' attr(data-overlay);
   overflow: hidden;
@@ -228,7 +234,7 @@ display: none;
   flex-direction: column;
   justify-content: flex-start;
   line-height: 2.5em;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 .upload-lines {
