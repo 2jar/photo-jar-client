@@ -11,6 +11,7 @@ $(() => {
   authEvents.addHandlers()
   resourceEvents.addHandlers()
   GoogleMapsLoader.KEY = 'AIzaSyAF7N8MH7vYBoQw0nt6Ed_pLcmuapkp0AU'
+  GoogleMapsLoader.VERSION = '3.36'
   GoogleMapsLoader.load(function (google) {
     store.map = new google.maps.Map(document.getElementById('map'), {
       center: {
