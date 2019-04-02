@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Photo Jar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
+
+  <!-- Do not add `script` tags-->
+  <!-- <script src="/assets/scripts/initMap.js"></script> -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF7N8MH7vYBoQw0nt6Ed_pLcmuapkp0AU&callback=initMap" async defer></script> -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- Navbar! -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <div class="navbar-brand" id="navbar-brand">
+      <!-- <img src="public/home-icon-lavender.png" width="40" height="40" class="d-inline-block align-top" alt="photos icon"> -->
+      <p class="title d-inline-block align-top">Photo Jar</p>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- About Link/ Modal -->
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target=".modal-about" href="#">About</a>
+
+        </li>
+        <!-- Change Password Link/Modal -->
+        <li class="nav-item signed-in-view d-none">
+          <a class="nav-link" data-toggle="modal" data-target=".modal-change-pw" href="#">Change Password</a>
+        </li>
+
+        <!-- Sign out Button -->
+        <li class="nav-item signed-in-view d-none">
+          <button type="submit" id="sign-out" class="btn submit sign-out nav-link">Sign Out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- About 2JAR Modal -->
+  <div class="modal fade modal-about" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">About</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Photo Jar is an app which allows users to upload, view, and update image files.
+            <br>
+            <br>
+            Sign in to share and upload photos!
+            <br>
+            <br>
+            This app was created by <a href="https://github.com/2jar" target="_blank">2Jar</a>, a General Assembly web development immersive team.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary clear-on-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Change PW Modal -->
+  <div class="modal fade modal-change-pw" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="change-pw-form">
+            <div class="form-group">
+              <label for="InputOldPassword">Old Password</label>
+              <input type="password" name="passwords[old]" class="form-control" id="InputOldPassword" aria-describedby="passwordHelp" placeholder="Enter Old Password">
+              <small id="passwordHelp" class="form-text text-muted">Please only use passwords unique to this app.</small>
+            </div>
+            <div class="form-group">
+              <label for="InputNewPassword">Password</label>
+              <input name="passwords[new]" type="password" class="form-control" id="InputNewPassword" placeholder="Enter New Password">
+            </div>
+            <button type="submit" class="btn btn-light submit">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p class='change-pw-msg'></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- auth transition area START-->
+    <div class="initial-auth-form">
+      <div class="user-messages"></div>
+      <div class="sign-in-div">
+        <form id="sign-in-form">
+          <label>Sign in to Photo Jar</label>
+          <input id="sign-in-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
+          <input name="credentials[password]" required type="password" placeholder="Password Here" />
+          <input type="submit" value="Sign In!" />
+        </form>
+        <small class="form-text text-muted">No account yet? <a id="register-reveal" href="#">Register for free!</a></small>
+      </div>
+      <div class="sign-up-div">
+        <form id="sign-up-form">
+          <label>Sign up for Photo Jar</label>
+          <input id="sign-up-email-field" name="credentials[email]" required type="email" placeholder="Email Here" />
+          <input name="credentials[password]" required type="password" placeholder="Password Here" />
+          <input name="credentials[password_confirmation]" required type="password" placeholder="Confirm Password" />
+          <input type="submit" value="Sign Up!" />
+        </form>
+        <small class="form-text text-muted">Already have an account? <a id="sign-in-reveal" href="#">Sign in.</a></small>
+      </div>
+    </div>
+    <!-- auth transition END-->
+
+    <div class="welcome-area">
+      <section class="hello"></section>
+      <button class="btn btn-light" type="button" data-toggle="modal" data-target="#upload-photo-modal">Upload a Photo</button>
+    </div>
+    <!-- Upload file form -->
+    <section id="content" class="content"></section>
+  </main>
+
+  <!--Upload Photo Modal -->
+  <div id="upload-photo-modal" class="modal fade modal-upload" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Upload Photo</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="upload-form" enctype="multipart/form-data">
+          <div class="modal-body upload-lines">
+            <div class="upload-lables">
+              <div>Image: </div>
+              <div>Title: </div>
+              <div>Tag: </div>
+            </div>
+            <div class="upload-inputs">
+              <input class="form-control" type="file" id="upload-file" name="upload-file" accept="image/png, image/jpeg, image/gif" required>
+              <input class="form-control" maxlength="30" type="text" name="title" placeholder="Enter a title" required>
+              <input class="form-control" maxlength="30" type="text" name="tag" placeholder="Enter a tag">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input class="btn btn-light" type="submit" id="upload-button" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Modal -->
+  <div class="modal fade modal-about maps-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Photo Location</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="map"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary clear-on-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Map Modal -->
+
+  <!-- No-Map Modal -->
+  <div class="modal fade modal-about no-maps-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Photo Location</h5>
+          <button type="button" class="close clear-on-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          The selected image does not contain GPS location information.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary clear-on-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END No-Map Modal -->
+
+</body>
+
+</html>
